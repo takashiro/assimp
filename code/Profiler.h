@@ -71,26 +71,26 @@ public:
 
     /** Start a named timer */
     void BeginRegion(const std::string& region) {
-        regions[region] = std::chrono::system_clock::now();
-        DefaultLogger::get()->debug((format("START `"),region,"`"));
+        //regions[region] = std::chrono::system_clock::now();
+        //DefaultLogger::get()->debug((format("START `"),region,"`"));
     }
 
 
     /** End a specific named timer and write its end time to the log */
     void EndRegion(const std::string& region) {
-        RegionMap::const_iterator it = regions.find(region);
-        if (it == regions.end()) {
-            return;
-        }
+//        RegionMap::const_iterator it = regions.find(region);
+//        if (it == regions.end()) {
+//            return;
+//        }
 
-        auto elapsedSeconds = std::chrono::system_clock::now() - regions[region];
-        DefaultLogger::get()->debug((format("END   `"),region,"`, dt= ", elapsedSeconds.count()," s"));
+        //auto elapsedSeconds = std::chrono::system_clock::now() - regions[region];
+        //DefaultLogger::get()->debug((format("END   `"),region,"`, dt= ", elapsedSeconds.count()," s"));
     }
 
 private:
 
-    typedef std::map<std::string,std::chrono::time_point<std::chrono::system_clock>> RegionMap;
-    RegionMap regions;
+    //typedef std::map<std::string,std::chrono::time_point<std::chrono::system_clock>> RegionMap;
+    //RegionMap regions;
 };
 
     }
