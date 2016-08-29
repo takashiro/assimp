@@ -64,6 +64,7 @@ public:
 
 	/** Constructor. */
 	AndroidJNIIOSystem(ANativeActivity* activity);
+    AndroidJNIIOSystem(AAssetManager* assetManager,std::string internalDataPath);
 
 	/** Destructor. */
 	~AndroidJNIIOSystem();

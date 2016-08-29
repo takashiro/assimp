@@ -65,6 +65,12 @@ AndroidJNIIOSystem::AndroidJNIIOSystem(ANativeActivity* activity)
 	AndroidActivityInit(activity);
 }
 
+AndroidJNIIOSystem::AndroidJNIIOSystem(AAssetManager* assetManager,std::string internalDataPath)
+{
+	mApkWorkspacePath = internalDataPath;
+	mApkAssetManager = assetManager;
+}
+
 // ------------------------------------------------------------------------------------------------
 // Destructor.
 AndroidJNIIOSystem::~AndroidJNIIOSystem()
